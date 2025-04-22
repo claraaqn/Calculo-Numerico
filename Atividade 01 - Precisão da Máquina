@@ -1,0 +1,81 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPA7Gv1DI0DAZ418K3nXtFZ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/claraaqn/Calculo-Numerico/blob/main/Atividade%2001%20-%20Precis%C3%A3o%20da%20M%C3%A1quina\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Cálculo do limite que indica a precisão de máquina\n",
+        "\n",
+        "$\\displaystyle \\lim_{x\\to \\infty} \\frac{1}{2^x}$.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "3TxcweFLwTdC"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "A precisão da máquina é o menor número que pode ser representado na máquina. O loop while continua dividindo A por 2 enquanto s for maior que 1. Isso significa que A está se aproximando cada vez mais de zero. A cada iteração, o valor de s é atualizado com o valor de 1 + A. Isso garante que s nunca seja menor que 1. Ao final do loop, o valor de 2 * A é impresso. Esse valor é o limite que indica a precisão da máquina, que é o número que a máquina considera 0."
+      ],
+      "metadata": {
+        "id": "c-T5iQHhzJJK"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "s = 2\n",
+        "A = 1\n",
+        "\n",
+        "while s>1:\n",
+        "  A = A/2\n",
+        "  s = 1+A\n",
+        "\n",
+        "print(2*A)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PmuC-1kOwSwJ",
+        "outputId": "29679295-8b8d-4c40-f077-15a5513da6ee"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2.220446049250313e-16\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
